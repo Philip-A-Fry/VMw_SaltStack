@@ -1,23 +1,23 @@
 list-java:
-  cmd.shell:
-    - name: find / -type f -not -path "*/proc/*" -name java -exec ls -lah {} \; exit 0
+  cmd.run:
+    - name: find / -type f -not -path "*/proc/*" -name java -exec ls -lah {} \; ; exit 0
 
 list-java2:
-  cmd.shell:
-    - name: find / -type f -not -path "*/proc/*" -name java -exec ls -lu {} \; exit 0-print
+  cmd.run:
+    - name: find / -type f -not -path "*/proc/*" -name java -exec ls -lu {} \; -print
 
 list-java-versions:
-  cmd.shell:
-    - name: find / -type f -not -path "*/proc/*" -name java | xargs -I{} echo "echo {};{} -version;echo" | sh; exit 0
+  cmd.run:
+    - name: find / -type f -not -path "*/proc/*" -name java -exec sh -c 'echo {};{} -version;echo' \; ; exit 0
 
 list-java-rpms:
-  cmd.shell:
+  cmd.run:
     - name: rpm -qa java*
 
 list-backup-dirs:
-  cmd.shell:
-    - name: find / -type d -not -path "*/proc/*" -name backup*; exit 0
+  cmd.run:
+    - name: find / -type d -not -path "*/proc/*" -name backup* ; exit 0
 
 list-cron-jobs:
-  cmd.shell:
+  cmd.run:
     - name: cat /etc/cron.*/*
