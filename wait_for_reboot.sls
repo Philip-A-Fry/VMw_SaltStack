@@ -18,4 +18,4 @@ wait_for_reboot:
     - id_list:
       - {{ target }}
     - require:
-      - reboot_minion
+      - sleep_orch
