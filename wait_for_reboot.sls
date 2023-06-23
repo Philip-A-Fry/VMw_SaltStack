@@ -6,6 +6,12 @@ reboot_minion:
     - name: system.reboot
     - tgt: {{ target }}
 
+sleep_orch:
+  salt.runner:
+    - name: test.sleep
+    - kwarg:
+        s_time: 10
+
 wait_for_reboot:
   salt.wait_for_event:
     - name: salt/minion/*/start
