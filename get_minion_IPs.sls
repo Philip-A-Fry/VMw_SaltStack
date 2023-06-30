@@ -1,5 +1,5 @@
 {% set command = '' %}
-{% set kernel = grains.get('kernel', '') %}
+{% set kernel = grains.get('kernel') %}
 
 {% if kernel == 'Windows' %}
   {% set shell = 'powershell' %}
