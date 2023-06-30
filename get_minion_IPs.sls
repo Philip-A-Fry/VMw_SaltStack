@@ -2,8 +2,8 @@
 {% set kernel = grains.get('kernel') %}
 
 {% if kernel == 'Windows' %}
-  {% set shell = 'powershell' %}
   {% set command = "ipconfig | Select-String IPv4" %}
+  {% set shell = 'powershell' %}
 {% elif kernel == 'Linux' %}
   {% set command = "ifconfig | grep -m3 \'inet \'" %}
   {% set shell = '/bin/bash' %}
