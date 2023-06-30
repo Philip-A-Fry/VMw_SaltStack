@@ -1,7 +1,5 @@
 # Print IPv4 addresses of all Minions
 
-# check_ipv4.sls
-
 {% set command = '' %}
 {% set kernel = grains.get('kernel', '') %}
 
