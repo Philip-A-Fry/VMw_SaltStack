@@ -12,7 +12,7 @@
 check_minion_ipv4:
   cmd.run:
     - name: {{ command }}
-    - shell: {{ kernel == 'Windows' }}
+    - shell: {{ kernel }}
     - python_shell: True
     - onlyif: '{{ command }}'
 
