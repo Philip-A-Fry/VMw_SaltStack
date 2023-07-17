@@ -5,7 +5,7 @@
   {% set command = "ipconfig | Select-String IPv4" %}
   {% set shell = 'powershell' %}
 {% elif kernel == 'Linux' %}
-  {% set command = "ifconfig | grep -m3 \'inet \'" %}
+  {% set command = "ifconfig | grep -m5 \'inet \'" %}
   {% set shell = '/bin/bash' %}
 {% endif %}
 
